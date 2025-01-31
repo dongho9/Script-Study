@@ -1,0 +1,97 @@
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+// reset
+@import "./styles/reset.scss";
+
+//variables
+@import "./styles/variables.scss";
+
+// common
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  background: map-get($colors, main-light-color);
+  color: map-get($colors, main-font-color);
+}
+.cd-section {
+  height: 100vh;
+  & > div {
+    height: 100%;
+    position: relative;
+    font-family: map-get($fonts, montserrat-font-family);
+    .contents {
+      background: map-get($colors, contents-bg-color);
+      position: absolute;
+      width: calc(100% - 40px);
+      height: calc(100% - 80px);
+      left: 20px;
+      bottom: 20px;
+      overflow: hidden;
+    }
+  }
+}
+
+/* content-item */
+
+// === awards ===
+.awards-inner {
+  display: flex;
+  height: 100%;
+  border: 1px solid map-get($colors, contents-bg-color);
+  .about-awards {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: map-get($colors, awards-bg-color);
+    color: map-get($colors, main-light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .about-heading {
+      padding: 0 120px;
+      h2 {
+        font-size: 3.6rem;
+      }
+      .bar {
+        width: 50px;
+        height: 4px;
+        border: none;
+        background: map-get($colors, bars-bg-color);
+        margin: 30px auto;
+      }
+      p {
+        color: map-get($colors, sub-font-color);
+        font-size: 1.8rem;
+        line-height: 3rem;
+        margin-bottom: 30px;
+      }
+      .view-awards {
+        border: 1px solid map-get($colors, btn-bg-color);
+        color: map-get($colors, btn-bg-color);
+        padding: 12px 28px;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        display: inline-block;
+        transition: all 0.5s;
+        &:hover {
+          background: map-get($colors, btn-hover-bgolor);
+          color: map-get($colors, main-light-color);
+          border: 1px solid transparent;
+        }
+      }
+    }
+  }
+  .victory-jump {
+    background: map-get($colors, main-light-color);
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
