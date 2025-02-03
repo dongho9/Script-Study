@@ -8,21 +8,19 @@ const userinput = document.querySelector("#todo-item");
 const ul = document.querySelector("ul");
 
 let todos = [];
-const delItem = (event) => {
-  const target = event.target.parentElement;
-  // todos = todos.forEach((todo) => {
-  todos = todos.filter((todo) => {
-    todo.id != target.id;
-    // console.log(typeof todos[0].id); //number
-    // console.log(typeof target.id); //string 이래서 얕은비교로 함
-    save();
-    target.remove();
-  });
-};
-
 const save = () => {
   localStorage.setItem("todos", JSON.stringify(todos));
   //서버의 공간에서 읽을 수 있도록 바꿈
+};
+
+const delItem = (event) => {
+  const target = event.target.parentElement;
+  // todos = todos.forEach((todo) => {
+  todos = todos.filter((todo) => todo.id != target.id);
+  // console.log(typeof todos[0].id); //number
+  // console.log(typeof target.id); //string 이래서 얕은비교로 함
+  save();
+  target.remove();
 };
 
 const additem = (todo) => {
@@ -30,6 +28,7 @@ const additem = (todo) => {
     const li = document.createElement("li");
     const span = document.createElement("span");
     const btn = document.createElement("button");
+
     span.innerText = todo.text;
     btn.innerText = "삭제";
     btn.addEventListener("click", delItem);
@@ -49,7 +48,9 @@ const handler = (event) => {
   };
   todos.push(todo); //배열로 보낸다
   additem(todo);
-  save();
+  if (todo.text !== "") {
+    save();
+  }
   userinput.value = "";
 };
 
@@ -62,6 +63,7 @@ const init = () => {
     todos = usertodos;
   }
 };
+
 init();
 form.addEventListener("submit", handler);
 
