@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.video-frame {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.video-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-135deg, #dc143c, transparent);
+  z-index: 1;
+}
+.video-frame video {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.logo {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  z-index: 3;
+  -webkit-animation: showing1 2s 1s linear both;
+          animation: showing1 2s 1s linear both;
+}
+
+.heading {
+  position: absolute;
+  left: 100px;
+  bottom: 100px;
+  z-index: 3;
+  -webkit-animation: showing1 2s 1s linear both;
+          animation: showing1 2s 1s linear both;
+}
+.heading h1 {
+  font-size: 4rem;
+}
+.heading h1 span {
+  display: block;
+  color: #dc143c;
+}
+.heading p {
+  font-size: 2rem;
+  color: #fff;
+}
+.heading .buttons a {
+  display: inline-block;
+  width: 150px;
+  padding: 8px;
+  margin: 14px 8px;
+  background: #fff;
+  color: #222;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.heading .buttons a.btn-learn {
+  background: transparent;
+  color: #fff;
+}
+.heading .buttons a.btn-learn:hover {
+  background: #fff;
+  color: #000;
+}
+.heading .buttons a.btn-book:hover {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.anniversary {
+  position: absolute;
+  bottom: 50px;
+  right: 100px;
+  z-index: 3;
+  text-align: center;
+  -webkit-animation: showing2 2s 1s linear both;
+          animation: showing2 2s 1s linear both;
+}
+.anniversary em {
+  display: block;
+  font-size: 4rem;
+  font-style: normal;
+  letter-spacing: 5px;
+  margin-bottom: -10px;
+}
+.anniversary span {
+  font-size: 10rem;
+  font-family: "Monoton";
+}
+
+.trigger {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  z-index: 4;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+.trigger span {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  display: inline-block;
+  background: #000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.trigger span:first-child {
+  top: 0;
+}
+.trigger span:nth-child(2) {
+  top: 50%;
+  width: 80%;
+}
+.trigger span:last-child {
+  bottom: 0;
+}
+.trigger.active span {
+  background: #fff;
+}
+.trigger.active span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 50%;
+}
+.trigger.active span:nth-child(2) {
+  opacity: 0;
+}
+.trigger.active span:last-child {
+  top: 50%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.modal-gnb {
+  display: none;
+  background: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.modal-gnb .gnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.modal-gnb .gnb a {
+  font-size: 4rem;
+  font-family: "Raleway";
+  color: #fff;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  -webkit-animation: gnbani 0.5s linear both;
+          animation: gnbani 0.5s linear both;
+}
+.modal-gnb .gnb a:nth-child(1) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.modal-gnb .gnb a:nth-child(2) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+.modal-gnb .gnb a:nth-child(3) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+.modal-gnb .gnb a:nth-child(4) {
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s;
+}
+.modal-gnb .gnb a:nth-child(5) {
+  -webkit-animation-delay: 1.3s;
+          animation-delay: 1.3s;
+}
+.modal-gnb .gnb a:hover {
+  color: #dc143c;
+}
+.modal-gnb.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@-webkit-keyframes gnbani {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes gnbani {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@-webkit-keyframes showing1 {
+  0% {
+    opacity: 0;
+    margin-left: -100px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+@keyframes showing1 {
+  0% {
+    opacity: 0;
+    margin-left: -100px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+@-webkit-keyframes showing2 {
+  0% {
+    opacity: 0;
+    margin-right: -100px;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 0;
+  }
+}
+@keyframes showing2 {
+  0% {
+    opacity: 0;
+    margin-right: -100px;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 0;
+  }
+}
