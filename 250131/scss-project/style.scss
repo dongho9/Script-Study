@@ -36,6 +36,157 @@ body {
 
 /* content-item */
 
+// === project ===
+.project-inner {
+  height: 100%;
+  overflow: hidden;
+  background: map-get($map: $colors, $key: main-light-color);
+  border: 1px solid map-get($map: $colors, $key: contents-bg-color);
+  input {
+    display: none;
+    &#tab1:checked {
+      & ~ .tabs {
+        margin-left: 0;
+      }
+      & ~ .btn label[for="tab1"]::before {
+        border: 1px solid map-get($map: $colors, $key: btn-bg-color);
+      }
+    }
+    &#tab2:checked {
+      & ~ .tabs {
+        margin-left: -100%;
+      }
+      & ~ .btn label[for="tab2"]::before {
+        border: 1px solid map-get($map: $colors, $key: btn-bg-color);
+      }
+    }
+    &#tab3:checked {
+      & ~ .tabs {
+        margin-left: -200%;
+      }
+      & ~ .btn label[for="tab3"]::before {
+        border: 1px solid map-get($map: $colors, $key: btn-bg-color);
+      }
+    }
+  }
+  .tabs {
+    width: 300%;
+    height: 100%;
+    transition: all 0.3s;
+    .tab {
+      width: 33.3333%;
+      height: 100%;
+      float: left;
+      display: flex;
+      & > div {
+        height: 100%;
+        &.project-info {
+          width: 25%;
+          padding: 50px;
+          position: relative;
+          h3 {
+            font-size: 2rem;
+            position: relative;
+            margin-bottom: 10px;
+          }
+          p {
+            font-size: 1.8rem;
+            line-height: 2.2rem;
+          }
+          ul {
+            margin: 30px 0;
+            line-height: 2.4rem;
+            li::before {
+              content: "\f105";
+              font-family: fontawesome;
+              margin-right: 10px;
+            }
+          }
+          .detail {
+            margin-bottom: 50px;
+            display: flex;
+            div {
+              text-align: center;
+              width: 33%;
+              color: map-get($map: $colors, $key: sub-font-color);
+              span {
+                display: block;
+                font-weight: bold;
+                font-size: 2.6rem;
+                color: map-get($map: $colors, $key: main-dark-color);
+                margin-bottom: 10px;
+              }
+            }
+          }
+          .view-project {
+            width: 220px;
+            background: map-get($map: $colors, $key: main-dark-color);
+            color: map-get($map: $colors, $key: main-light-color);
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            padding: 10px;
+            text-align: center;
+            display: inline-block;
+            .fas {
+              transition: 0.3s;
+            }
+            &:hover .fas {
+              margin-left: 30px;
+            }
+          }
+          &::before {
+            content: attr(data-text);
+            font-size: 10rem;
+            color: map-get($map: $colors, $key: input-focus-color);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+          }
+        }
+        &.project-photo {
+          width: 75%;
+          overflow: hidden;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .btn {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    width: 25%;
+    text-align: center;
+    label {
+      width: 5px;
+      height: 5px;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 50%;
+      margin: 8px;
+      background: map-get($map: $colors, $key: main-dark-color);
+      position: relative;
+      &:hover::before {
+        opacity: 1;
+        border: 1px solid map-get($map: $colors, $key: btn-bg-color);
+      }
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: -6px;
+        top: -6px;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        transition: all 0.3s;
+      }
+    }
+  }
+}
+
 // === plan ===
 .plan-inner {
   background: map-get($map: $colors, $key: main-dark-color);

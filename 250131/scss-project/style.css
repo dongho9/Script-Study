@@ -46,6 +46,157 @@ body {
 }
 
 /* content-item */
+.project-inner {
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.project-inner input {
+  display: none;
+}
+.project-inner input#tab1:checked ~ .tabs {
+  margin-left: 0;
+}
+.project-inner input#tab1:checked ~ .btn label[for=tab1]::before {
+  border: 1px solid #bbb;
+}
+.project-inner input#tab2:checked ~ .tabs {
+  margin-left: -100%;
+}
+.project-inner input#tab2:checked ~ .btn label[for=tab2]::before {
+  border: 1px solid #bbb;
+}
+.project-inner input#tab3:checked ~ .tabs {
+  margin-left: -200%;
+}
+.project-inner input#tab3:checked ~ .btn label[for=tab3]::before {
+  border: 1px solid #bbb;
+}
+.project-inner .tabs {
+  width: 300%;
+  height: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.project-inner .tabs .tab {
+  width: 33.3333%;
+  height: 100%;
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.project-inner .tabs .tab > div {
+  height: 100%;
+}
+.project-inner .tabs .tab > div.project-info {
+  width: 25%;
+  padding: 50px;
+  position: relative;
+}
+.project-inner .tabs .tab > div.project-info h3 {
+  font-size: 2rem;
+  position: relative;
+  margin-bottom: 10px;
+}
+.project-inner .tabs .tab > div.project-info p {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+.project-inner .tabs .tab > div.project-info ul {
+  margin: 30px 0;
+  line-height: 2.4rem;
+}
+.project-inner .tabs .tab > div.project-info ul li::before {
+  content: "\f105";
+  font-family: fontawesome;
+  margin-right: 10px;
+}
+.project-inner .tabs .tab > div.project-info .detail {
+  margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.project-inner .tabs .tab > div.project-info .detail div {
+  text-align: center;
+  width: 33%;
+  color: #999;
+}
+.project-inner .tabs .tab > div.project-info .detail div span {
+  display: block;
+  font-weight: bold;
+  font-size: 2.6rem;
+  color: #000;
+  margin-bottom: 10px;
+}
+.project-inner .tabs .tab > div.project-info .view-project {
+  width: 220px;
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+}
+.project-inner .tabs .tab > div.project-info .view-project .fas {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.project-inner .tabs .tab > div.project-info .view-project:hover .fas {
+  margin-left: 30px;
+}
+.project-inner .tabs .tab > div.project-info::before {
+  content: attr(data-text);
+  font-size: 10rem;
+  color: #eee;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+}
+.project-inner .tabs .tab > div.project-photo {
+  width: 75%;
+  overflow: hidden;
+}
+.project-inner .tabs .tab > div.project-photo img {
+  width: 100%;
+}
+.project-inner .btn {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  width: 25%;
+  text-align: center;
+}
+.project-inner .btn label {
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 8px;
+  background: #000;
+  position: relative;
+}
+.project-inner .btn label:hover::before {
+  opacity: 1;
+  border: 1px solid #bbb;
+}
+.project-inner .btn label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 .plan-inner {
   background: #000;
   height: 100%;
