@@ -21,6 +21,7 @@ html {
 
 body {
   font-size: 1.6rem;
+  background: #000;
 }
 
 #container {
@@ -235,4 +236,8 @@ body {
   font-size: 1.6rem;
   border: 1px solid #000;
   cursor: pointer;
+}
+#navigation .navigation-item.active {
+  background-color: #fff;
+  color: #000;
 }
