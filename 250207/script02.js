@@ -13,7 +13,6 @@ if (isNaN(students)) {
       )}개 입니다`
     );
   } else {
-    console.log(das02);
     console.log(
       `학생수는 ${students}명이며 필요한 다스 수는 ${das02}개 입니다`
     );

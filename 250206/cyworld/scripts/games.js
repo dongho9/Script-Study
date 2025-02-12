@@ -42,7 +42,7 @@ const startLotto = () => {
   }
   if (myNum.size === 6) {
     result.innerText = `${[...myNum]}`;
-    // 기존 배열을 변경하지 않고 새로운 배열을 생성
+    // ...은 기존 배열을 변경하지 않고 새로운 배열을 생성
   } else {
     result.innerText = "재추첨하겠습니다";
   }
