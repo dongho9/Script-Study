@@ -1,3 +1,4 @@
+const musicPlayer = document.querySelector("#music-player"); //뮤직플레이어
 const playBtn = document.querySelector(".play-pause"); //정지버튼
 const video = document.querySelector("video"); //비디오
 const volumeBar = document.querySelector("input[type='range']"); //볼륨
@@ -54,7 +55,11 @@ const updateProgress = () => {
 
 playBtn.addEventListener("click", togglePlay);
 //플레이버튼 클릭 이벤트
-video.addEventListener("click", togglePlay);
+video.addEventListener("dblclick", () => {
+  video.requestFullscreen();
+});
+video.addEventListener("pointerdown", togglePlay);
+// pointerdown 이벤트는 사용자가 화면을 터치하거나 마우스를 클릭할 때 발생하는 이벤트
 //비디오태그 클릭 이벤트
 video.addEventListener("timeupdate", updateTime);
 // 시간 업데이트 이벤트
@@ -72,6 +77,16 @@ fullBtn.addEventListener("click", () => {
   //전체화면
 });
 
+document.addEventListener("fullscreenchange", () => {
+  // fullscreenchange 이벤트는 전체화면이 될 때 발생하는 이벤트
+  // console.log(document.fullscreenElement);
+  if (document.fullscreenElement) {
+    document.addEventListener("pointerdown", togglePlay);
+  } else {
+    document.removeEventListener("pointerdown", togglePlay);
+  }
+});
+
 const setRate = (e) => {
   // const rate = e.target.dataset.rate;
   const { rate } = e.target.dataset; //객체 안에 있는 키가 변수명과 같다면 구조분해할당으로 생략가능
@@ -83,3 +98,16 @@ rates.forEach((rate) => {
     setRate(e);
   });
 });
+
+const videoPoint = (e) => {
+  // console.log(e.pageX); //현재 클릭한 위치가 x축으로 몇만큼 떨어졌는지
+  // console.log(musicPlayer.offsetLeft); //musicPlayer가 x축으로 몇만큼 떨어졌는지
+  const mouseX = e.pageX - musicPlayer.offsetLeft;
+  // console.log(mouseX);
+  const progressBarWidth = progressCover.clientWidth;
+  const duration = video.duration;
+  const clickTime = (mouseX / progressBarWidth) * duration;
+  console.log(clickTime);
+  video.currentTime = clickTime; //비디오 현재시간을 바꿔줌
+};
+progressCover.addEventListener("click", videoPoint);

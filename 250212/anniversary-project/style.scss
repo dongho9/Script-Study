@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+$color: (
+  dark: #000,
+  light: #fff,
+  title: #666,
+  shadow: #333,
+  accent: #222,
+  bg: #747474,
+  item: #ccc,
+);
+$font: (
+  jua: "Jua",
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 450px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid map-get($map: $color, $key: item);
+  box-shadow: 0px 0px 8px map-get($map: $color, $key: shadow);
+  .day1 {
+    text-align: center;
+    font-family: map-get($map: $font, $key: jua);
+    h3 {
+      font-size: 3.2rem;
+      color: map-get($map: $color, $key: title);
+    }
+    .accent {
+      margin-top: 6px;
+      span {
+        font-size: 4rem;
+        color: map-get($map: $color, $key: accent);
+      }
+    }
+  }
+  .bar {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 2rem;
+    margin: 20px 0;
+    background: map-get($map: $color, $key: bg);
+    color: map-get($map: $color, $key: light);
+  }
+  .day2 {
+    width: 100%;
+    ul {
+      height: 60px;
+      border-bottom: 1px dashed map-get($map: $color, $key: item);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      font-size: 1.8rem;
+      .item-title {
+      }
+      .item-date {
+        color: map-get($map: $color, $key: accent);
+        font-weight: bold;
+      }
+    }
+  }
+}
