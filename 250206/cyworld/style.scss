@@ -1,0 +1,166 @@
+@import "./styles/reset.scss";
+@import "./styles/variables.scss";
+
+// common
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  background: map-get($map: $colors, $key: dark);
+}
+#container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #outer {
+    width: 807px;
+    height: 544px;
+    background: url("./contents/outerbox.png") center/cover no-repeat;
+    position: relative;
+    padding: 36px;
+    #inner {
+      display: flex;
+    }
+  }
+}
+
+// inner-left
+#inner-left {
+  width: 203px;
+  height: 472px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  .inner-left-header {
+    width: 100%;
+    height: 30px;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    .zero {
+      color: map-get($map: $colors, $key: accent);
+    }
+  }
+  .inner-left-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid map-get($map: $colors, $key: gray);
+    border-radius: 14px;
+    padding: 26px;
+    .left-body-title {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .title-img {
+        width: 148px;
+        height: 133px;
+        background: url("./contents//iu.jpg") center/cover no-repeat;
+      }
+      .title-line {
+        width: 100%;
+        border-top: 1px dotted map-get($map: $colors, $key: dark);
+        margin-top: 12px;
+      }
+    }
+    .left-body-profile {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 18px;
+      .profile-datail {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+      }
+    }
+    .left-body-footer {
+      width: 100%;
+      .footer-feel {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        .feel-title {
+          font-weight: bold;
+        }
+        form {
+          width: 100%;
+          select {
+            width: 100%;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// inner-right
+#inner-right {
+  width: 524px;
+  height: 472px;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  .inner-right-header {
+    display: flex;
+    justify-content: space-between;
+    color: map-get($map: $colors, $key: theme);
+    .header-title {
+      font-weight: bold;
+    }
+    .header-privacy {
+      font-size: 1.3rem;
+    }
+  }
+  .inner-right-body {
+    width: 100%;
+    height: 445px;
+    border: 1px solid map-get($map: $colors, $key: gray);
+    border-radius: 14px;
+    background: map-get($map: $colors, $key: light);
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+  }
+}
+
+// navigation
+#navigation {
+  position: absolute;
+  top: 20%;
+  right: -70px;
+  width: 70px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .navigation-item {
+    background: map-get($map: $colors, $key: theme);
+    color: map-get($map: $colors, $key: light);
+    text-align: center;
+    line-height: 30px;
+    border-radius: 0 8px 8px 0;
+    font-size: 1.6rem;
+    border: 1px solid map-get($map: $colors, $key: dark);
+    cursor: pointer;
+    &.active {
+      background-color: map-get($map: $colors, $key: light);
+      color: map-get($map: $colors, $key: dark);
+    }
+  }
+}

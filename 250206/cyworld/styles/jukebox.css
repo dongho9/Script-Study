@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+html body {
+  font-size: 1.6rem;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#wrapper #wrapper-header {
+  width: 100%;
+}
+#wrapper #wrapper-header .contents-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+#wrapper #wrapper-header .contents-title .title {
+  color: #55a2e4;
+  font: bold 1.4rem/1 arial;
+}
+#wrapper #wrapper-header .contents-title .subtitle {
+  font: normal 1.4rem/1 arial;
+}
+#wrapper #wrapper-header .header-line {
+  width: 100%;
+  border-top: 1px solid #808080;
+  margin: 4px 0;
+}
+#wrapper #wrapper-header .albumWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#wrapper #wrapper-header .albumWrapper .album-thumbnail {
+  width: 110px;
+  height: 110px;
+}
+#wrapper #wrapper-header .albumWrapper .album-songtitle {
+  font-size: 1.4rem;
+  color: #808080;
+}
+#wrapper #wrapper-header .albumWrapper .album-artist {
+  font-size: 1.4rem;
+  color: #0f465e;
+}
+#wrapper #wrapper-body {
+  width: 100%;
+}
+#wrapper #wrapper-body .contents-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+#wrapper #wrapper-body .contents-title .title {
+  color: #55a2e4;
+  font: bold 1.4rem/1 arial;
+}
+#wrapper #wrapper-body .contents-title .subtitle {
+  font: normal 1.4rem/1 arial;
+}
+#wrapper #wrapper-body .albumTable {
+  width: 100%;
+  margin: 4px 0;
+  padding: 2px;
+  border-spacing: 0;
+}
+#wrapper #wrapper-body .albumTable th {
+  background: #eee;
+  padding: 2px;
+  font-size: 1.4rem;
+}
+#wrapper #wrapper-body .albumTable td {
+  color: #0f465e;
+  border-bottom: 1px dashed #808080;
+  height: 26px;
+}
+#wrapper #wrapper-body .albumTable .albumTable-checkBox {
+  width: 5%;
+  text-align: center;
+}
+#wrapper #wrapper-body .albumTable .albumTable-number {
+  width: 18%;
+  text-align: center;
+}
+#wrapper #wrapper-body .albumTable .albumTable-song {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 6px;
+  padding-left: 40px;
+}
+#wrapper #wrapper-body .albumTable .albumTable-song i {
+  display: inline-block;
+  width: 24px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  font-size: 1.4rem;
+  background: #55a2e4;
+  cursor: pointer;
+  border-radius: 3px;
+  color: #fff;
+}
+#wrapper #wrapper-body .albumTable .albumTable-artist {
+  width: 26%;
+  text-align: center;
+}
+#wrapper #wrapper-body .albumTable-footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#wrapper #wrapper-body .albumTable-footer button {
+  background: #808080;
+  color: #fff;
+  border: none;
+  padding: 3px 5px;
+  border-radius: 6px;
+}
+#wrapper #wrapper-body .albumTable-footer .footer-center {
+  color: #dc143c;
+}

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프론트엔드 개발자과정 - 강동호</title>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      body {
+        background-color: #1b1b19;
+        color: #fec0bc;
+        font-family: "Gowun Dodum", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .headermove {
+        top: -150px;
+      }
+      header {
+        top: 0;
+        transition: top 0.3s ease-in-out; /* top 속성에 transition 적용 */
+        position: fixed;
+        padding: 0 50px;
+        width: 100%;
+        background-color: transparent;
+        line-height: 70px;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .gnb > ul {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+      }
+      .gnb > ul > li > a {
+        transition: 0.3s;
+        display: block;
+      }
+      .gnb > ul > li:hover > a {
+        color: #fff;
+      }
+      .gnb li {
+        position: relative;
+      }
+      .submenu {
+        position: absolute;
+        top: 100%;
+        left: -50%;
+        background-color: transparent;
+        min-width: 150px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none; /* 초기에는 숨겨짐 */
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .submenu li {
+        padding: 10px;
+        line-height: 35px;
+      }
+
+      .submenu li a {
+        color: #fec0bc;
+      }
+      .submenu li a {
+        display: block;
+        transition: 0.3s;
+      }
+      .submenu li a:hover {
+        background-color: #fff;
+        color: #000;
+      }
+
+      /* 리스트 */
+      main {
+        text-align: center;
+        padding-top: 100px;
+      }
+      section {
+        display: flex;
+        justify-content: center;
+      }
+      dl {
+        width: 70%;
+        line-height: 80px;
+      }
+      dt {
+        font-size: 24px;
+        text-align: left;
+        color: #fff;
+        font-weight: bold;
+      }
+      dd {
+        transition: 0.3s;
+        padding: 0 20px;
+      }
+      dd:hover {
+        background-color: #fff;
+        border-radius: 30px;
+      }
+      dd:hover a {
+        color: #000;
+        font-weight: bold;
+      }
+      dd a {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @media screen and (max-width: 1024px) {
+        dl {
+          width: 90%;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        h1 {
+          font-size: 16px;
+        }
+        .gnb ul {
+          padding: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>이젠아카데미 생성형 AI 프론트엔드 개발자과정 - 스크립트</h1>
+    </header>
+    <main>
+      <section>
+        <dl>
+          <dt>250122</dt>
+          <dd>
+            <a
+              href="./250122/game_project/index.html"
+              title="자바스크립트 실습1"
+            >
+              <span>250122-01</span>
+              <span>자바스크립트 실습01</span>
+            </a>
+          </dd>
+          <dd>
+            <a
+              href="./250122/game-project02/index.html"
+              title="자바스크립트 실습2"
+            >
+              <span>250122-02</span>
+              <span>자바스크립트 실습02</span>
+            </a>
+          </dd>
+          <dt>250123</dt>
+          <dd>
+            <a href="./250123/video project/index.html" title="비디오 프로젝트">
+              <span>250123-01</span>
+              <span>비디오 프로젝트</span>
+            </a>
+          </dd>
+          <dt>250131</dt>
+          <dd>
+            <a href="./250131/index02.html" title="프로필">
+              <span>250131-01</span>
+              <span>프로필</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250131/index03.html" title="다크모드">
+              <span>250131-02</span>
+              <span>다크모드</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250131/scss-project/index.html" title="SCSS 프로젝트">
+              <span>250131-03</span>
+              <span>SCSS 프로젝트</span>
+            </a>
+          </dd>
+          <dt>250203</dt>
+          <dd>
+            <a href="./250203/index.html" title="폼요소 활용">
+              <span>250203-01</span>
+              <span>폼요소 활용</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250203/index02.html" title="할인가격 구하기">
+              <span>250203-02</span>
+              <span>할인가격 구하기</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250203/todolist/index.html" title="투두리스트">
+              <span>250203-03</span>
+              <span>투두리스트 만들기</span>
+            </a>
+          </dd>
+          <dd>
+            <a
+              href="./250203/todolist/todolist-prac/index.html"
+              title="투두리스트 연습"
+            >
+              <span>250203-04</span>
+              <span>투두리스트 연습</span>
+            </a>
+          </dd>
+          <dt>250204</dt>
+          <dd>
+            <a href="./250204/index.html" title="이벤트">
+              <span>250204-01</span>
+              <span>이벤트</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250204/index02.html" title="이벤트">
+              <span>250204-02</span>
+              <span>focus, blur이벤트</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250204/index03.html" title="이벤트">
+              <span>250204-03</span>
+              <span>submit이벤트</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250204/index04.html" title="이벤트">
+              <span>250204-04</span>
+              <span>click이벤트</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250204/index05.html" title="이벤트">
+              <span>250204-05</span>
+              <span>page(X,Y),screen(X,Y)</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250204/slide-project/index.html" title="이벤트">
+              <span>250204-06</span>
+              <span>슬라이드 프로젝트</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250204/prac/index06.html" title="문제풀기">
+              <span>250204-07</span>
+              <span>스크립트 문제풀기01</span>
+            </a>
+          </dd>
+          <dt>250205</dt>
+          <dd>
+            <a href="./250205/index.html" title="DOM">
+              <span>250205-01</span>
+              <span>DOM조작으로 요소 추가하기</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250205/index02.html" title="DOM">
+              <span>250205-02</span>
+              <span>DOM조작으로 요소 추가하기2</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250205/index03.html" title="DOM">
+              <span>250205-03</span>
+              <span>DOM조작으로 요소 추가, 삭제하기</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250205/index04.html" title="DOM">
+              <span>250205-04</span>
+              <span>DOM조작으로 메뉴 나오게하기</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250205/toggle-project/index.html" title="toggle-project">
+              <span>250205-05</span>
+              <span>토글 프로젝트</span>
+            </a>
+          </dd>
+          <dt>250206</dt>
+          <dd>
+            <a href="./250206/rating-project/index.html" title="rating-project">
+              <span>250206-01</span>
+              <span>별점기능 만들기</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250206/hover-project/index.html" title="hover-project">
+              <span>250206-02</span>
+              <span>마우스오버 프로젝트</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250206/cyworld/index.html" title="cyworld-project">
+              <span>250206-03</span>
+              <span>사이월드 프로젝트</span>
+            </a>
+          </dd>
+          <dt>250208</dt>
+          <dd>
+            <a href="./250207/index.html" title="문제풀기">
+              <span>250207-01</span>
+              <span>스크립트 문제풀기02</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250207/index02.html" title="문제풀기">
+              <span>250207-02</span>
+              <span>스크립트 문제풀기03</span>
+            </a>
+          </dd>
+          <dt>250211</dt>
+          <dd>
+            <a href="./250211/slide-project/index.html" title="슬라이드 만들기">
+              <span>250211-01</span>
+              <span>슬라이드 만들기</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250211/video-player/index.html" title="비디오 플레이어">
+              <span>250211-02</span>
+              <span>비디오 플레이어</span>
+            </a>
+          </dd>
+          <dt>250212</dt>
+          <dd>
+            <a href="./250212/index.html" title="팝업창 만들기">
+              <span>250212-01</span>
+              <span>팝업창 만들기</span>
+            </a>
+          </dd>
+          <dd>
+            <a
+              href="./250212/anniversary-project/index.html"
+              title="기념일 계산기"
+            >
+              <span>250212-02</span>
+              <span>기념일 계산기</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250212/digital-clock/index.html" title="디지털 시계">
+              <span>250212-03</span>
+              <span>디지털 시계</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250212/analog-clock/index.html" title="아날로그 시계">
+              <span>250212-04</span>
+              <span>아날로그 시계</span>
+            </a>
+          </dd>
+          <dt>250213</dt>
+          <dd>
+            <a href="./250213/index.html" title="원의 넓이, 둘레 구하기">
+              <span>250213-01</span>
+              <span>원의 넓이, 둘레 구하기</span>
+            </a>
+          </dd>
+          <dd>
+            <a href="./250213/random-project/index.html" title="랜덤 배경">
+              <span>250213-02</span>
+              <span>랜덤 배경</span>
+            </a>
+          </dd>
+          <dd>
+            <a
+              href="./250213/inner-object-project/index.html"
+              title="살아온 시간 계산하기"
+            >
+              <span>250213-03</span>
+              <span>살아온 시간 계산하기</span>
+            </a>
+          </dd>
+          <dd>
+            <a
+              href="./250213/youtube-project/index.html"
+              title="유튜브 프로젝트"
+            >
+              <span>250213-04</span>
+              <span>유튜브 프로젝트</span>
+            </a>
+          </dd>
+          <dt>250214</dt>
+          <dd>
+            <a href="./250214/index02.html" title="원기둥의 부피 구하기">
+              <span>250214-01</span>
+              <span>원기둥의 부피 구하기</span>
+            </a>
+          </dd>
+        </dl>
+      </section>
+    </main>
+  </body>
+  <script>
+    let menuli = document.querySelectorAll(".gnb > ul > li");
+
+    menuli.forEach(function (menulis) {
+      menulis.addEventListener("mouseover", function () {
+        let sub = menulis.querySelector(".submenu");
+        sub.style.display = "block";
+      });
+      menulis.addEventListener("mouseleave", function () {
+        let sub = menulis.querySelector(".submenu");
+        sub.style.display = "none";
+      });
+    });
+
+    let prevscroll = 0;
+    window.addEventListener("scroll", function () {
+      let scrolltop = window.scrollY; // 현재 스크롤 위치를 저장
+      let hd = document.querySelector("header"); // header 요소 선택
+
+      // 스크롤 위치가 이전 위치보다 커지면 "headermove" 클래스를 추가
+      if (scrolltop > prevscroll) {
+        hd.classList.add("headermove");
+      } else {
+        hd.classList.remove("headermove");
+      }
+
+      prevscroll = scrolltop; // 이전 스크롤 위치를 업데이트
+    });
+
+    const lenis = new Lenis();
+
+    lenis.on("scroll", (e) => {
+      // console.log(e)
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  </script>
+</html>

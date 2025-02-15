@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+html {
+  font-size: 62.5%;
+}
+
+$color: (
+  main-dark-color: #000,
+  main-light-color: #fff,
+  main-text-color: #9acd32,
+);
+body {
+  font-size: 1.6rem;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: map-get($map: $color, $key: main-dark-color);
+}
+#container {
+  .photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url("./img/portrait-initial.jpg") center/cover no-repeat;
+  }
+  .nav a {
+    position: relative;
+    font-size: 4rem;
+    color: map-get($map: $color, $key: main-light-color);
+    overflow: hidden;
+    &:hover::before {
+      width: 100%;
+    }
+    &::before {
+      content: attr(data-text);
+      color: map-get($map: $color, $key: main-text-color);
+      position: absolute;
+      width: 0%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+  }
+}

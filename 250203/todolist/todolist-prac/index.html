@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List Practice</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <form name="todolist" method="post">
+      <h2>Todo List</h2>
+      <div id="user-input">
+        <input
+          type="text"
+          name="todo-item"
+          id="todo-item"
+          placeholder="오늘할 일을 입력하세요"
+        />
+        <input type="submit" value="등록" id="accept" />
+      </div>
+      <ul id="list"></ul>
+    </form>
+  </body>
+</html>

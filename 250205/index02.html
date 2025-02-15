@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>250205-01</title>
+    <script src="./script02.js" defer></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      body {
+        #container {
+          margin: 100px auto 0;
+          width: 1200px;
+        }
+        #heading {
+          gap: 20px;
+          display: flex;
+          img {
+            width: 200px;
+            border-radius: 8px;
+          }
+          .desc {
+            width: 70%;
+            h2 {
+              margin: 8px 0 20px;
+            }
+            p {
+              margin: 8px 0;
+              &:nth-of-type(2) {
+                line-height: 140%;
+              }
+            }
+            #order {
+              border: none;
+              padding: 6px 10px;
+              font-size: 18px;
+              border-radius: 8px;
+              cursor: pointer;
+            }
+          }
+        }
+        #orderInfo {
+          margin-top: 50px;
+          padding: 14px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          img {
+            width: 200px;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="container">
+      <div id="heading">
+        <div class="img">
+          <img
+            src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b24c79dc-427b-4722-9e0c-2ca66c064ecf/G.T.+HUSTLE+3+EP+OLY.png"
+            alt="nike"
+          />
+        </div>
+        <div class="desc">
+          <h1>상품설명</h1>
+          <h2 id="title">
+            상풍명 : 나이키 G.T. 허슬 3 일렉트릭 <span>[마감임박상품]</span>
+          </h2>
+          <p>
+            이중 스택 중에서 유닛이 막강한 파워를 제공하고 통기성 좋은 갑피가
+            안정성과 시원함을 유지해줍니다.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse illo,
+            quasi ea accusantium voluptatibus incidunt eligendi itaque sed
+            facere porro ipsa aliquid sunt eos vero. Quam accusamus architecto
+            quae praesentium. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Eum ea perspiciatis corporis, laborum sunt porro
+            delectus nisi ut? Sed sit est deleniti, recusandae eius dicta vitae
+            in asperiores obcaecati eum?
+          </p>
+          <button id="order">상품주문하기</button>
+        </div>
+      </div>
+      <div id="orderInfo">주문내역</div>
+    </main>
+  </body>
+</html>
