@@ -1,5 +1,4 @@
-// Slick Slider
-
+// slick slider-1
 $(".history-slider").slick({
   slidesToShow: 4, //한번에 보여질 슬라이드 개수
   slidesToScroll: 2, //한번에 넘겨질 슬라이드 개수
@@ -31,4 +30,14 @@ $(".history-slider").slick({
       },
     },
   ],
+});
+
+// slick slider-2
+$(".project-photo").slick({
+  dots: true,
+  infinite: true,
+  fade: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  cssEase: "linear",
 });

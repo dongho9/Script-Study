@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <script defer src="./script05.js"></script>
+  </head>
+  <body>
+    <form id="container" name="logon-list" action="#" method="post">
+      <h3>이젠아카데미 회원가입</h3>
+      <input
+        id="email"
+        type="email"
+        class="inputBox"
+        placeholder="이메일을 입력해주세요."
+      />
+      <div id="error_email" class="error"></div>
+      <input
+        id="writer"
+        type="text"
+        class="inputBox"
+        placeholder="이름을 입력해주세요."
+      />
+      <div id="error_writer" class="error"></div>
+      <input
+        id="password1"
+        type="password"
+        class="inputBox"
+        placeholder="비밀번호를 입력해주세요."
+      />
+      <div id="error_password1" class="error"></div>
+      <input
+        id="password2"
+        type="password"
+        class="inputBox"
+        placeholder="비밀번호를 다시 입력해주세요."
+      />
+      <div id="error_password2" class="error"></div>
+      <div class="phone-wrapper">
+        <input id="phone1" type="text" class="phoneNum" maxlength="3" />
+        -
+        <input id="phone2" type="text" class="phoneNum" maxlength="4" />
+        -
+        <input id="phone3" type="text" class="phoneNum" maxlength="4" />
+      </div>
+      <div class="token-wrapper">
+        <div id="token" class="token">000000</div>
+        <button id="token-button" disabled>인증번호 전송</button>
+      </div>
+      <div class="token-wrapper">
+        <div id="token-timer" class="token-timer">03:00</div>
+        <button id="token-timer-confirm-button" disabled>인증완료</button>
+      </div>
+      <div class="location-wrapper">
+        <select name="location" id="location" class="location">
+          <option value="" selected disabled>지역을 선택하세요.</option>
+          <option value="seoul">서울</option>
+          <option value="gyeongi">경기</option>
+          <option value="incheon">인천</option>
+        </select>
+      </div>
+      <div id="error_location" class="error"></div>
+      <div class="gender-wrapper">
+        <div class="gender">
+          <input
+            type="radio"
+            name="gender"
+            id="gender-woman"
+            class="gender-radio"
+          />
+          여성
+        </div>
+        <div class="gender">
+          <input
+            type="radio"
+            name="gender"
+            id="gender-man"
+            class="gender-radio"
+          />
+          남성
+        </div>
+      </div>
+      <div id="error_gender" class="error"></div>
+      <hr />
+      <div class="footer">
+        <button disabled id="signup-button">가입하기</button>
+      </div>
+    </form>
+  </body>
+</html>

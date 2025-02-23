@@ -1,0 +1,464 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+
+figure {
+  color: #fff;
+  font: normal 1.4rem/1 "Pretendard";
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url("https://storage.lynlab.co.kr/apple-music.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+figure h1 {
+  position: absolute;
+  top: 7vh;
+  left: 4vw;
+  font-size: 0;
+}
+figure h1 strong {
+  font: bold 3.6rem/1.4 "Pretendard";
+  letter-spacing: 1px;
+}
+figure h1 span {
+  display: block;
+  font: normal 1.4rem/1 "Pretendard";
+}
+figure .menu {
+  position: absolute;
+  top: 8vh;
+  right: 4vw;
+  font-size: 2.4rem;
+}
+figure > p {
+  color: #000;
+  position: absolute;
+  bottom: 7vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+figure section {
+  width: 20vw;
+  height: 65vh;
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  margin-left: -10vw;
+  margin-top: -25vh;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+figure section article {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+figure section article.on .inner {
+  opacity: 0.9;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+figure section article .inner {
+  width: 100%;
+  height: 100%;
+  background: #f0f7ff;
+  padding: 5vh 2.5vw 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  border-radius: 10px;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0.6;
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 1s, -webkit-transform 1s;
+}
+figure section article .inner .pic {
+  width: 15vw;
+  height: 15vw;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+figure section article .inner .pic::before, figure section article .inner .pic::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: inherit;
+  background-position: inherit;
+  background-repeat: inherit;
+  background-size: inherit;
+}
+figure section article .inner .pic::before {
+  content: "";
+  -webkit-transform: translateY(10%);
+          transform: translateY(10%);
+  -webkit-filter: blur(20px) brightness(1.6);
+          filter: blur(20px) brightness(1.6);
+}
+figure section article .inner .pic.on::after {
+  -webkit-animation: ani 4s linear infinite;
+          animation: ani 4s linear infinite;
+}
+figure section article .inner .pic.on::before {
+  -webkit-animation: ani2 4s linear infinite;
+          animation: ani2 4s linear infinite;
+}
+figure section article .inner .pic .dot {
+  width: 3vw;
+  height: 3vw;
+  background: #e4f1ff;
+  z-index: 1;
+  position: relative;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+figure section article .inner .text {
+  text-align: center;
+  position: relative;
+  z-index: 4;
+}
+figure section article .inner .text h2 {
+  font-size: 2rem;
+  color: #222;
+}
+figure section article .inner .text p {
+  font-size: 1.2rem;
+  margin: 2vh 0 3vh;
+  color: #777;
+}
+figure section article .inner .text ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+figure section article .inner .text ul li {
+  cursor: pointer;
+  opacity: 0.6;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+figure section article .inner .text ul li:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+figure section article .inner .text ul li.play {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+figure section article .inner .text ul li.play:hover {
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
+}
+figure section article .inner .text ul li i {
+  color: #777;
+}
+figure .btnPrev {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  left: 50%;
+  -webkit-transform: translate(-20vw, -50%);
+          transform: translate(-20vw, -50%);
+}
+figure .btnPrev span {
+  font: normal 1.2rem/1 "Pretendard";
+  opacity: 1;
+  -webkit-transform: translate(30%);
+          transform: translate(30%);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+figure .btnPrev:hover span {
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+figure .btnPrev:hover::before {
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+figure .btnPrev:hover::after {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+figure .btnPrev::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+}
+figure .btnPrev::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  bottom: 50%;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+}
+figure .btnNext {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  right: 50%;
+  -webkit-transform: translate(20vw, -50%);
+          transform: translate(20vw, -50%);
+  text-align: right;
+}
+figure .btnNext:hover span {
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+figure .btnNext:hover::before {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+figure .btnNext:hover::after {
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+figure .btnNext span {
+  font: normal 1.2rem/1 "Pretendard";
+  opacity: 1;
+  -webkit-transform: translate(-30%);
+          transform: translate(-30%);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+figure .btnNext::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transform-origin: right center;
+          transform-origin: right center;
+}
+figure .btnNext::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  -webkit-transform-origin: right center;
+          transform-origin: right center;
+}
+
+@-webkit-keyframes ani {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes ani {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes ani02 {
+  0% {
+    -webkit-transform: translateY(10%) rotate(0deg);
+            transform: translateY(10%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(10%) rotate(360deg);
+            transform: translateY(10%) rotate(360deg);
+  }
+}
+@keyframes ani02 {
+  0% {
+    -webkit-transform: translateY(10%) rotate(0deg);
+            transform: translateY(10%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(10%) rotate(360deg);
+            transform: translateY(10%) rotate(360deg);
+  }
+}
+.loading {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.loading span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: gray;
+  -webkit-animation: loading 1.5s linear infinite;
+          animation: loading 1.5s linear infinite;
+}
+.loading span:first-child {
+  background: crimson;
+}
+.loading span:last-child {
+  background: dodgerblue;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 10px);
+  }
+  50% {
+    top: calc(100% - 10px);
+    left: calc(100% - 10px);
+  }
+  75% {
+    top: calc(100% - 10px);
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes loading {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 10px);
+  }
+  50% {
+    top: calc(100% - 10px);
+    left: calc(100% - 10px);
+  }
+  75% {
+    top: calc(100% - 10px);
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}

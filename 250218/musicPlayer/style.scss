@@ -1,0 +1,321 @@
+@import "./styles/reset.scss";
+@import "./styles/variables.scss";
+
+@mixin btnDetail {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: map-get($map: $colors, $key: light);
+  position: absolute;
+  left: 0;
+  transition: all 0.5s;
+}
+@mixin btnStyle {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+figure {
+  color: map-get($map: $colors, $key: light);
+  font: normal 1.4rem/1 "Pretendard";
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url("https://storage.lynlab.co.kr/apple-music.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  h1 {
+    position: absolute;
+    top: 7vh;
+    left: 4vw;
+    font-size: 0;
+    strong {
+      font: bold 3.6rem/1.4 "Pretendard";
+      letter-spacing: 1px;
+    }
+    span {
+      display: block;
+      font: normal 1.4rem/1 "Pretendard";
+    }
+  }
+  .menu {
+    position: absolute;
+    top: 8vh;
+    right: 4vw;
+    font-size: 2.4rem;
+  }
+  & > p {
+    color: map-get($map: $colors, $key: dark);
+    position: absolute;
+    bottom: 7vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  section {
+    width: 20vw;
+    height: 65vh;
+    position: absolute;
+    top: 140%;
+    left: 50%;
+    margin-left: -10vw;
+    margin-top: -25vh;
+    transition: all 0.5s;
+    article {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      &.on {
+        .inner {
+          opacity: 0.9;
+          transform: scale(1);
+        }
+      }
+      .inner {
+        width: 100%;
+        height: 100%;
+        background: map-get($map: $colors, $key: inner);
+        padding: 5vh 2.5vw 8vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-around;
+        border-radius: 10px;
+        transform: scale(0.8);
+        box-shadow: 10px 10px 20px rgba($color: #000000, $alpha: 0.1);
+        opacity: 0.6;
+        transition: opacity 1s, transform 1s;
+        .pic {
+          width: 15vw;
+          height: 15vw;
+          border: 1px solid #ccc;
+          border-radius: 50%;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          &::before,
+          &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: inherit;
+            background-position: inherit;
+            background-repeat: inherit;
+            background-size: inherit;
+          }
+          &::before {
+            content: "";
+            transform: translateY(10%);
+            filter: blur(20px) brightness(1.6);
+          }
+          &.on::after {
+            animation: ani 4s linear infinite;
+          }
+          &.on::before {
+            animation: ani2 4s linear infinite;
+          }
+          .dot {
+            width: 3vw;
+            height: 3vw;
+            background: map-get($map: $colors, $key: dot);
+            z-index: 1;
+            position: relative;
+            border-radius: 50%;
+            box-shadow: inset 5px 5px 10px rgba($color: #000000, $alpha: 0.1);
+          }
+        }
+        .text {
+          text-align: center;
+          position: relative;
+          z-index: 4;
+          h2 {
+            font-size: 2rem;
+            color: map-get($map: $colors, $key: title);
+          }
+          p {
+            font-size: 1.2rem;
+            margin: 2vh 0 3vh;
+            color: map-get($map: $colors, $key: desc);
+          }
+          ul {
+            display: flex;
+            justify-content: space-between;
+            li {
+              cursor: pointer;
+              opacity: 0.6;
+              cursor: pointer;
+              transition: all 0.5s;
+              &:hover {
+                opacity: 1;
+                transform: scale(1.2);
+              }
+              &.play {
+                transform: scale(1.4);
+                &:hover {
+                  transform: scale(1.6);
+                }
+              }
+              i {
+                color: map-get($map: $colors, $key: desc);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .btnPrev {
+    @include btnStyle();
+    left: 50%;
+    transform: translate(-20vw, -50%);
+    span {
+      font: normal 1.2rem/1 "Pretendard";
+      opacity: 1;
+      transform: translate(30%);
+      transition: all 0.5s;
+    }
+    &:hover {
+      span {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      &::before {
+        transform: rotate(-30deg);
+      }
+      &::after {
+        transform: rotate(30deg);
+      }
+    }
+    &::before {
+      @include btnDetail();
+      transform: rotate(-180deg);
+      transform-origin: left center;
+    }
+    &::after {
+      @include btnDetail();
+      transform: rotate(180deg);
+      bottom: 50%;
+      transform-origin: left center;
+    }
+  }
+  .btnNext {
+    @include btnStyle();
+    right: 50%;
+    transform: translate(20vw, -50%);
+    text-align: right;
+    &:hover {
+      span {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      &::before {
+        transform: rotate(30deg);
+      }
+      &::after {
+        transform: rotate(-30deg);
+      }
+    }
+    span {
+      font: normal 1.2rem/1 "Pretendard";
+      opacity: 1;
+      transform: translate(-30%);
+      transition: all 0.5s;
+    }
+    &::before {
+      @include btnDetail();
+      transform: rotate(180deg);
+      transform-origin: right center;
+    }
+    &::after {
+      @include btnDetail();
+      transform: rotate(-180deg);
+      transform-origin: right center;
+    }
+  }
+}
+@keyframes ani {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ani02 {
+  0% {
+    transform: translateY(10%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(10%) rotate(360deg);
+  }
+}
+
+.loading {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: gray;
+    animation: loading 1.5s linear infinite;
+    &:first-child {
+      background: crimson;
+    }
+    &:last-child {
+      background: dodgerblue;
+      animation-delay: 0.8s;
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 10px);
+  }
+  50% {
+    top: calc(100% - 10px);
+    left: calc(100% - 10px);
+  }
+  75% {
+    top: calc(100% - 10px);
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}

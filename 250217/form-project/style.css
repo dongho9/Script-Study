@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#container {
+  width: 540px;
+  height: 900px;
+  border: 1px solid #aacdff;
+  -webkit-box-shadow: 7px 7px 40px rgba(0, 104, 255, 0.3);
+          box-shadow: 7px 7px 40px rgba(0, 104, 255, 0.3);
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 60px;
+}
+#container h3 {
+  font-size: 3.2rem;
+  color: #0068ff;
+  font-weight: bold;
+  margin-bottom: 40px;
+  width: 380px;
+}
+#container .error {
+  color: crimson;
+  height: 10px;
+  font-size: 1.2rem;
+}
+#container .inputBox {
+  width: 380px;
+  height: 60px;
+  margin-top: 20px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #d2d2d2;
+  border-radius: 8px;
+}
+#container .inputBox::-webkit-input-placeholder {
+  color: #797979;
+  font-size: 1.6rem;
+}
+#container .inputBox::-moz-placeholder {
+  color: #797979;
+  font-size: 1.6rem;
+}
+#container .inputBox:-ms-input-placeholder {
+  color: #797979;
+  font-size: 1.6rem;
+}
+#container .inputBox::-ms-input-placeholder {
+  color: #797979;
+  font-size: 1.6rem;
+}
+#container .inputBox::placeholder {
+  color: #797979;
+  font-size: 1.6rem;
+}
+#container .phone-wrapper {
+  width: 380px;
+  height: 40px;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#container .phone-wrapper .phoneNum {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #d2d2d2;
+  border-radius: 6px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+#container .token-wrapper {
+  width: 380px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+#container .token-wrapper #token,
+#container .token-wrapper #token-tinmer {
+  color: #0068ff;
+  font-size: 1.8rem;
+}
+#container .token-wrapper #token-button,
+#container .token-wrapper #token-timer-confirm-button {
+  width: 120px;
+  height: 40px;
+  margin-left: 20px;
+  border: 1px solid #d2d2d2;
+  border-radius: 6px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+#container .location {
+  width: 380px;
+  height: 60px;
+  padding: 18px;
+  margin-top: 20px;
+  font-size: 1.6rem;
+  border: 1px solid #d2d2d2;
+  color: #797979;
+  border-radius: 8px;
+}
+#container .gender-wrapper {
+  width: 380px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+#container .gender-wrapper .gender {
+  width: 70px;
+  text-align: center;
+}
+#container hr {
+  width: 380px;
+  margin: 30px 0 20px;
+  border: 1px solid #e6e6e6;
+}
+#container #signup-button {
+  width: 380px;
+  height: 75px;
+  border: 1px solid #d2d2d2;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  cursor: pointer;
+}

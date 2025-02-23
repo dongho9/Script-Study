@@ -46,6 +46,57 @@ body {
 }
 
 /* content-item */
+.about-inner {
+  height: 100%;
+  background: #0dace3 url("./images/line-drawing.png") right bottom no-repeat;
+}
+.about-inner .about-items {
+  width: 45%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-left: 150px;
+}
+.about-inner .about-items .item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+.about-inner .about-items .item:hover h3 {
+  color: #000;
+}
+.about-inner .about-items .item:hover img {
+  -webkit-filter: invert(0);
+          filter: invert(0);
+}
+.about-inner .about-items .item img {
+  height: 100px;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.about-inner .about-items .item span h3 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  letter-spacing: -1px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.about-inner .about-items .item span p {
+  font-size: 1.8rem;
+  margin-top: 5px;
+}
+
 .project-inner {
   height: 100%;
   overflow: hidden;
@@ -276,14 +327,14 @@ body {
   display: none !important;
 }
 
-.awards-inner {
+.awards-inner2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 100%;
   border: 1px solid #ddd;
 }
-.awards-inner .about-awards {
+.awards-inner2 .about-awards {
   width: 100%;
   height: 100%;
   position: relative;
@@ -300,26 +351,26 @@ body {
           align-items: center;
   text-align: center;
 }
-.awards-inner .about-awards .about-heading {
+.awards-inner2 .about-awards .about-heading {
   padding: 0 120px;
 }
-.awards-inner .about-awards .about-heading h2 {
+.awards-inner2 .about-awards .about-heading h2 {
   font-size: 3.6rem;
 }
-.awards-inner .about-awards .about-heading .bar {
+.awards-inner2 .about-awards .about-heading .bar {
   width: 50px;
   height: 4px;
   border: none;
   background: #dc143c;
   margin: 30px auto;
 }
-.awards-inner .about-awards .about-heading p {
+.awards-inner2 .about-awards .about-heading p {
   color: #999;
   font-size: 1.8rem;
   line-height: 3rem;
   margin-bottom: 30px;
 }
-.awards-inner .about-awards .about-heading .view-awards {
+.awards-inner2 .about-awards .about-heading .view-awards {
   border: 1px solid #bbb;
   color: #bbb;
   padding: 12px 28px;
@@ -329,17 +380,17 @@ body {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-.awards-inner .about-awards .about-heading .view-awards:hover {
+.awards-inner2 .about-awards .about-heading .view-awards:hover {
   background: #31c0ce;
   color: #fff;
   border: 1px solid transparent;
 }
-.awards-inner .victory-jump {
+.awards-inner2 .victory-jump {
   background: #fff;
   width: 100%;
   height: 100%;
 }
-.awards-inner .victory-jump img {
+.awards-inner2 .victory-jump img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -495,4 +546,158 @@ body {
 }
 .contact-inner .contact-feature .contact-info p {
   line-height: 2.6rem;
+}
+
+.modal {
+  font-family: "Source Sans 3";
+}
+.modal .header {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.modal .header .header-inner {
+  width: 95%;
+  margin: 0 auto;
+  height: 90%;
+  line-height: 90px;
+}
+.modal .header .header-inner .modal-display {
+  font-size: 1.8rem;
+}
+.modal .hiring-main {
+  margin-top: 60px;
+  height: 600px;
+  position: relative;
+}
+.modal .hiring-main .hiring-heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+.modal .hiring-main .hiring-heading span {
+  text-transform: uppercase;
+  font-size: 2rem;
+  position: relative;
+}
+.modal .hiring-main .hiring-heading span::before {
+  content: "";
+  width: 50px;
+  height: 1px;
+  position: absolute;
+  background: #fff;
+  left: -50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.modal .hiring-main .hiring-heading span::after {
+  content: "";
+  width: 50px;
+  height: 1px;
+  position: absolute;
+  background: #fff;
+  right: -50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.modal .hiring-main .hiring-heading h1 {
+  font-size: 8rem;
+  font-weight: lighter;
+  margin-top: 20px;
+}
+.modal .hiring-main.project-main1 {
+  background: url("./images/project-main-01-01.jpg") center/cover no-repeat;
+}
+.modal .hiring-info {
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.modal .hiring-info > div {
+  width: 50%;
+  height: 600px;
+}
+.modal .hiring-info > div.center-parent {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.modal .hiring-info > div.center-parent .center-child {
+  width: 70%;
+}
+.modal .hiring-info > div.center-parent .center-child h2 {
+  font-size: 3.6rem;
+  font-weight: normal;
+}
+.modal .hiring-info > div.center-parent .center-child p {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2.5rem;
+}
+.modal .hiring-info > div.photo img {
+  width: 100%;
+}
+.modal .hiring-info > div.photo.project-info {
+  font-size: 2rem;
+  font-weight: 300;
+  padding-top: 120px;
+}
+.modal .hiring-slogan {
+  padding: 100px 0;
+}
+.modal .hiring-slogan p {
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  position: relative;
+}
+.modal .hiring-slogan p::before {
+  content: ",,";
+  font-size: 10rem;
+  font-family: "Overpass";
+  color: #ddd;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  position: absolute;
+  top: -62px;
+  left: -35px;
+}
+
+.featherlight .featherlight-content {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+.featherlight .featherlight-content iframe {
+  width: 100%;
+  height: 100%;
+}
+.featherlight .featherlight-content .featherlight-close-icon {
+  top: 3%;
+  right: 3%;
+  font-size: 2rem;
 }
