@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  width: 800px;
+  padding-top: 30px;
+}
+.container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  position: relative;
+}
+.container form .search {
+  position: absolute;
+  top: 24px;
+  right: 0;
+}
+.container form .search input[type=text] {
+  width: 200px;
+  font-size: 1.6rem;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding-left: 8px;
+  padding-bottom: 5px;
+}
+.container form .search input[type=text]::-webkit-input-placeholder {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  color: #ddd;
+}
+.container form .search input[type=text]::-moz-placeholder {
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  color: #ddd;
+}
+.container form .search input[type=text]:-ms-input-placeholder {
+  -ms-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  color: #ddd;
+}
+.container form .search input[type=text]::-ms-input-placeholder {
+  -ms-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  color: #ddd;
+}
+.container form .search input[type=text]::placeholder {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  color: #ddd;
+}
+.container form .search input[type=text]:focus {
+  outline: none;
+}
+.container form .search input[type=text]:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+.container form .search input[type=text]:focus::-moz-placeholder {
+  opacity: 0;
+}
+.container form .search input[type=text]:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+.container form .search input[type=text]:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+.container form .search input[type=text]:focus::placeholder {
+  opacity: 0;
+}
+.container form .search i {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  cursor: pointer;
+  color: #ddd;
+}
+.container form .sort-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.container form .sort-buttons input[type=button] {
+  width: 100%;
+  padding: 12px;
+  cursor: pointer;
+}
+.container form select {
+  width: 100%;
+  padding: 10px;
+  background: #eee;
+  border: none;
+}
+.container ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+.container ul li {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 10px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  margin: 20px 0;
+  padding: 20px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.container ul li img {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.container ul li div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}

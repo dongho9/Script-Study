@@ -13,7 +13,8 @@
 */
 // new Date();
 let arr = new Array();
-console.log(arr);
+// console.log(arr);
+// const today = new Date();
 // console.log(today);
 // VM377:1 Wed Feb 12 2025 11:32:53 GMT+0900 (한국 표준시)
 // undefined
