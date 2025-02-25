@@ -1,2 +1,44 @@
 @import "./reset.scss";
 @import "./variables.scss";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #kakaotalk-sharing-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(180px, 130px);
+    z-index: 1;
+  }
+  #product-detail {
+    width: 600px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .product-category {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 1.8rem;
+    }
+    .product-img {
+      margin-bottom: 50px;
+    }
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+  }
+}
