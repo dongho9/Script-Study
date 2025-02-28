@@ -1,0 +1,222 @@
+@import "./variables.scss";
+
+// responsive
+@media screen and (max-width: 768px) {
+  .cd-section {
+    height: auto;
+    & > div {
+      height: auto;
+      .contents {
+        position: static;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  // === headder /===
+  header {
+    z-index: 10;
+    transition: all 0.5s;
+    .gnb-inner {
+      .gnb {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background: map-get($map: $colors, $key: main-light-color);
+        width: 250px;
+        height: 100vh;
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 1);
+        transition: all 0.5s;
+        .menu {
+          margin-top: 40px;
+          display: block;
+          a {
+            color: map-get($map: $colors, $key: main-dark-color);
+            display: block;
+            text-align: right;
+            padding-right: 20px;
+            font-size: 2rem;
+          }
+        }
+        .slogan {
+          display: none;
+        }
+        &.active {
+          right: 0%;
+        }
+      }
+      .trigger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 24px;
+        height: 14px;
+        cursor: pointer;
+        &.active {
+          span {
+            &:nth-child(1) {
+              top: 50%;
+              transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              top: 50%;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+        span {
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background: map-get($map: $colors, $key: main-dark-color);
+          transition: all 0.5s;
+          &:nth-child(2) {
+            top: 50%;
+          }
+          &:nth-child(3) {
+            top: 100%;
+          }
+        }
+      }
+    }
+    &.active {
+      background: map-get($map: $colors, $key: input-focus-color);
+    }
+  }
+
+  // === gototop /===
+  .gototop {
+    display: block;
+    position: fixed;
+    left: 20px;
+    border: 1px solid map-get($map: $colors, $key: main-light-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(60px);
+    transition: all 0.5s;
+    bottom: 20px;
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // === home /===
+  .home-inner {
+    height: 100vh;
+    .welcome-text {
+      transform: translate(-50%, -50%) scale(0.7);
+      width: 100%;
+    }
+    .home-heading {
+      left: 20px;
+      span {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  // === about ===
+  .about-inner {
+    height: auto;
+    padding: 20px;
+    background: map-get($map: $colors, $key: about-bg-color);
+    .about-items {
+      padding: 20px;
+      position: static;
+      width: 100%;
+      margin-left: 0;
+      transform: none;
+      text-align: center;
+      .item {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  // === project /===
+  .project-inner {
+    height: auto;
+    border: none;
+    .tabs {
+      .tab {
+        flex-direction: column;
+        & > div {
+          width: 100%;
+          &.project-info {
+            width: 100%;
+          }
+          &.project-photo {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+
+  // === plan ===
+  .plan-inner {
+    height: auto;
+    padding: 20px;
+    .plan-feature {
+      width: 100%;
+      position: static;
+      transform: none;
+      & > div {
+        height: auto;
+      }
+      .plan-info {
+        flex-direction: column;
+        margin-bottom: 40px;
+        .plan-heading {
+          width: 100%;
+        }
+        .plan-photo {
+          width: 100%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  // === awards ===
+  .awards-inner {
+    height: auto;
+    flex-direction: column;
+
+    .victory-jump {
+      img {
+      }
+    }
+  }
+
+  // === contact ===
+  .contact-inner {
+    height: auto;
+    .contact-feature {
+      width: 100%;
+      position: static;
+      transform: none;
+      flex-direction: column;
+      & > div {
+        width: 100%;
+      }
+    }
+  }
+}

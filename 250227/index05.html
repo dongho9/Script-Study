@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="./script05.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #container {
+        text-align: center;
+        button {
+          width: 150px;
+          padding: 10px 20px;
+          margin: 10px 0;
+          cursor: pointer;
+        }
+        #result {
+          font-weight: bold;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="container">
+      <h1>경강선 노선</h1>
+      <button>다음 역</button>
+      <div id="result">출발!</div>
+    </main>
+  </body>
+</html>

@@ -36,6 +36,127 @@ body {
 
 /* content-item */
 
+// === headder /===
+header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  .gnb-inner {
+    width: calc(100% - 40px);
+    margin: auto;
+    height: 60px;
+    line-height: 60px;
+    .logo {
+      float: left;
+      img {
+        padding-top: 16px;
+      }
+    }
+    .gnb {
+      float: right;
+      .menu {
+        display: none;
+      }
+      .slogan {
+        font-size: 1.6rem;
+        font-style: italic;
+      }
+    }
+    .trigger {
+      display: none;
+    }
+  }
+}
+
+// === gototop /===
+.gototop {
+  display: none;
+}
+
+// === hiring /===
+.btn-hiring {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  color: map-get($map: $colors, $key: main-light-color);
+  background: map-get($map: $colors, $key: main-dark-color);
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px rgba($color: #000000, $alpha: 0.4);
+  transition: all 0.5s;
+  i {
+    margin-right: 6px;
+    transform: rotateY(180deg);
+  }
+  &.active {
+    transform: scale(0);
+  }
+}
+
+// === home /===
+.home-inner {
+  background: map-get($map: $colors, $key: main-light-color);
+  height: 100%;
+  position: relative;
+  &::before {
+    content: "";
+    background: map-get($map: $colors, $key: main-dark-color);
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: overlay 1s 2s ease-in-out both;
+  }
+  .welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    text-align: center;
+    font-family: map-get($map: $fonts, $key: sans3-font-family);
+    font-weight: lighter;
+    animation: slideUp 2s linear both;
+    span {
+      display: block;
+      font-size: 2.6rem;
+      i {
+        color: map-get($map: $colors, $key: bars-bg-color);
+      }
+    }
+  }
+  .opacity-image {
+    background: url("./images/section-bg-01.jpg") center/cover no-repeat;
+    height: 100%;
+    opacity: 0;
+    animation: opacity-image 1s 2.6s ease-in both;
+  }
+  .home-heading {
+    position: absolute;
+    top: 50%;
+    left: 300px;
+    transform: translateY(-50%);
+    span {
+      width: 0;
+      display: block;
+      font-size: 10rem;
+      color: map-get($map: $colors, $key: main-light-color);
+      overflow: hidden;
+      animation: reveal 1s 3s ease-in-out both;
+      &:nth-child(1) {
+        animation-delay: 3s;
+      }
+      &:nth-child(2) {
+        animation-delay: 3.2s;
+      }
+      &:nth-child(3) {
+        animation-delay: 3.4s;
+      }
+    }
+  }
+}
 // === about ===
 .about-inner {
   height: 100%;
@@ -83,6 +204,7 @@ body {
     }
   }
 }
+
 // === project /===
 .project-inner {
   height: 100%;
@@ -319,7 +441,7 @@ body {
 }
 
 // === awards ===
-.awards-inner2 {
+.awards-inner {
   display: flex;
   height: 100%;
   border: 1px solid map-get($colors, contents-bg-color);
@@ -673,5 +795,57 @@ body {
       right: 3%;
       font-size: 2rem;
     }
+  }
+}
+
+// === animation ===
+@keyframes overlay {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    margin-top: 50px;
+  }
+  20% {
+    opacity: 1;
+    margin-top: 0;
+  }
+  80% {
+    opacity: 1;
+    margin-top: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes opacity-image {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }

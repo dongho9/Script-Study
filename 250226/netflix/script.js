@@ -83,3 +83,42 @@ naviList.forEach((li) => {
     });
   });
 });
+
+// Accordion Event
+const contents = document.querySelectorAll(".accordion .content");
+contents[0].style.display = "block";
+const titles = document.querySelectorAll(".title");
+
+titles.forEach((title) => {
+  title.addEventListener("click", () => {
+    contents.forEach((item) => {
+      item.style.display = "none";
+    });
+    titles.forEach((othertitle) => {
+      if (othertitle !== title) {
+        othertitle.classList.remove("active");
+      }
+    });
+    const content = title.nextElementSibling;
+    if (title.classList.contains("active")) {
+      title.classList.remove("active");
+      content.style.display = "none";
+      title.classList.remove("active");
+      content.style.display = "none";
+    } else {
+      title.classList.add("active");
+      content.style.display = "block";
+    }
+  });
+});
+
+// search Modal
+const searchBtn = document.querySelector(".fa-search");
+const modalSearch = document.querySelector(".modalSearch");
+const closeBtn = document.querySelector(".fa-close");
+searchBtn.addEventListener("click", () => {
+  modalSearch.classList.add("active");
+});
+closeBtn.addEventListener("click", () => {
+  modalSearch.classList.remove("active");
+});
