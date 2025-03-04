@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container table {
+  width: 280px;
+  margin: 10px;
+  display: inline-block;
+}
+.container table th {
+  width: 80px;
+}
+.container table td {
+  width: 200px;
+  padding: 10px 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
