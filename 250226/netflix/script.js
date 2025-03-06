@@ -1,7 +1,66 @@
 import { API_KEY } from "./env.js";
 
+// Document Items
+const nowplayingUl = document.querySelector(".nowplaying ul");
+const upcomingUl = document.querySelector(".upcoming ul");
+const topratedUl = document.querySelector(".toprated ul");
+
 // Common URL
 const tmdbCommand = "https://api.themoviedb.org/3";
+
+// Create Element
+const createElement = (movie, index, category) => {
+  const {
+    adult,
+    genre_ids,
+    id,
+    overview,
+    poster_path,
+    release_date,
+    title,
+    vote_average,
+  } = movie;
+
+  const li = document.createElement("li");
+  const moviePoster = document.createElement("div");
+  const movieTitle = document.createElement("div");
+  const movieDesc = document.createElement("div");
+
+  const img = document.createElement("img");
+  img.src = `https://image.tmdb.org/t/p/original/${poster_path}`;
+
+  const ageLimit = document.createElement("span");
+  const movieNum = document.createElement("span");
+  const release = document.createElement("span");
+  const vote = document.createElement("span");
+
+  moviePoster.className = "moviePoster";
+  movieTitle.className = "movieTitle";
+  movieDesc.className = "movieDesc";
+
+  let adultKo = adult === false ? "ALL" : "18";
+  ageLimit.innerText = adultKo;
+  movieNum.innerText = index + 1;
+
+  release.innerText = release_date;
+  vote.innerText = `⭐️${parseFloat(vote_average).toFixed(2)}`;
+
+  li.className = id;
+  li.setAttribute("data-category", category);
+
+  moviePoster.append(img, ageLimit, movieNum);
+  movieTitle.innerText = title;
+  movieDesc.append(release, vote);
+  li.append(moviePoster, movieTitle, movieDesc);
+
+  if (category === "nowplaying") {
+    nowplayingUl.appendChild(li);
+  } else if (category === "upcoming") {
+    upcomingUl.appendChild(li);
+  } else if (category === "toprated") {
+    topratedUl.appendChild(li);
+  }
+};
 
 // NowPlaying DB
 const nowPlaying = async () => {
@@ -35,6 +94,125 @@ const getMovies = async () => {
     topRated(),
   ]);
 
+  // Movie Items
+  nowPlayingMovie.forEach((movie, index) => {
+    createElement(movie, index, "nowplaying");
+  });
+
+  upComingMovie.forEach((movie, index) => {
+    createElement(movie, index, "upcoming");
+  });
+
+  topRatedMovie.forEach((movie, index) => {
+    createElement(movie, index, "toprated");
+  });
+
+  // Item Slider
+  // 전체 총 영화 아이템 개수 : 20개
+  // 한 번에 보여지는 영화 개수 : 5개
+  // 좌 혹은 우측 슬라이드 버튼 클릭 시: 5개 이동
+  // 각 영화의 너비값 : 160
+  // 영화와 영화사이 간격 : 25
+  // 한 번에 보여지는 공간 : 900
+  // (160 + 25) * 4 + 160 => 20개의 영화 아이템을 가지고 있는 ul태그가 슬라이드 버튼 클릭 시, 이동해야하는 거리!!!
+  // 무한 슬라이드를 실행하기 위해서 아래와 같이 노드를 복제!
+  // 15~19번째 인덱스 영화아이템 + 20개의 영화 아이템 + 0~4번째 인덱스 영화아이템
+  // 1 2 3 4 5
+  // 6 7 8 9 10
+  // 11 12 13 14 15
+  // 16 17 18 19 20
+
+  const initializeSlider = (
+    slideSelector,
+    rightArrowSelector,
+    leftArrowSelector
+  ) => {
+    const slider = document.querySelector(slideSelector);
+    const slides = slider.querySelectorAll("li");
+    const slideToShow = 5;
+    const slideWidth = 160;
+    const slideMargin = 25;
+    let currentIndex = 0;
+    let isTransitioning = false;
+
+    const firstClones = Array.from(slides)
+      .slice(0, slideToShow)
+      .map((slide) => slide.cloneNode(true));
+
+    const lastClones = Array.from(slides)
+      .slice(-slideToShow)
+      .map((slide) => slide.cloneNode(true));
+
+    slider.append(...firstClones);
+    slider.prepend(...lastClones);
+
+    const updateSlider = () => {
+      const offset = -(slideWidth + slideMargin) * (currentIndex + slideToShow);
+      slider.style.transform = `translateX(${offset}px)`;
+    };
+
+    slider.style.transition = "none";
+    updateSlider();
+
+    document.querySelector(rightArrowSelector).addEventListener("click", () => {
+      if (isTransitioning) return;
+
+      isTransitioning = true;
+      currentIndex += slideToShow;
+
+      if (currentIndex === slides.length) {
+        slider.style.transition = "all 0.5s";
+        updateSlider();
+        setTimeout(() => {
+          slider.style.transition = "none";
+          currentIndex = 0;
+          updateSlider();
+          isTransitioning = false;
+        }, 500);
+      } else {
+        slider.style.transition = "all 0.5s";
+        updateSlider();
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 500);
+      }
+    });
+
+    document.querySelector(leftArrowSelector).addEventListener("click", () => {
+      if (isTransitioning) return;
+
+      isTransitioning = true;
+      currentIndex -= slideToShow;
+
+      if (currentIndex < 0) {
+        slider.style.transition = "all 0.5s";
+        updateSlider();
+        setTimeout(() => {
+          slider.style.transition = "none";
+          currentIndex = slides.length - slideToShow;
+          updateSlider();
+          isTransitioning = false;
+        }, 500);
+      } else {
+        slider.style.transition = "all 0.5s";
+        updateSlider();
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 500);
+      }
+    });
+  };
+
+  initializeSlider(
+    ".nowplaying ul",
+    "#nowPlayingRightArrow",
+    "#nowPlayingLeftArrow"
+  );
+
+  initializeSlider(".upcoming ul", "#upcomingRightArrow", "#upcomingLeftArrow");
+
+  initializeSlider(".toprated ul", "#topRatedRightArrow", "#topRatedLeftArrow");
+
   // Main Slider
   const mainSlider = document.querySelector(".mainSlider");
 
@@ -61,25 +239,27 @@ const getMovies = async () => {
 
 getMovies();
 
-// gnb Li event
-const naviList = document.querySelectorAll(".gnb > ul > li");
+// GNB li Event
+const naviLis = document.querySelectorAll(".gnb > ul > li");
 const submenus = document.querySelectorAll(".submenu");
 const menuBg = document.querySelector(".menu-bg");
-naviList.forEach((li) => {
-  li.addEventListener("mouseover", () => {
+
+naviLis.forEach((naviLi) => {
+  naviLi.addEventListener("mouseover", () => {
     submenus.forEach((submenu) => {
       submenu.style.opacity = "1";
-      submenu.style.maxHeight = "320px";
+      submenu.style.maxHeight = "300px";
       menuBg.style.opacity = "1";
       menuBg.style.maxHeight = "320px";
     });
   });
-  li.addEventListener("mouseout", () => {
+
+  naviLi.addEventListener("mouseout", () => {
     submenus.forEach((submenu) => {
       submenu.style.opacity = "0";
-      submenu.style.maxHeight = "0px";
+      submenu.style.maxHeight = "0";
       menuBg.style.opacity = "0";
-      menuBg.style.maxHeight = "0px";
+      menuBg.style.maxHeight = "0";
     });
   });
 });
@@ -87,22 +267,20 @@ naviList.forEach((li) => {
 // Accordion Event
 const contents = document.querySelectorAll(".accordion .content");
 contents[0].style.display = "block";
-const titles = document.querySelectorAll(".title");
 
+const titles = document.querySelectorAll(".title");
 titles.forEach((title) => {
   title.addEventListener("click", () => {
     contents.forEach((item) => {
       item.style.display = "none";
     });
-    titles.forEach((othertitle) => {
-      if (othertitle !== title) {
-        othertitle.classList.remove("active");
+    titles.forEach((otherTitle) => {
+      if (otherTitle !== title) {
+        otherTitle.classList.remove("active");
       }
     });
     const content = title.nextElementSibling;
     if (title.classList.contains("active")) {
-      title.classList.remove("active");
-      content.style.display = "none";
       title.classList.remove("active");
       content.style.display = "none";
     } else {
@@ -112,13 +290,15 @@ titles.forEach((title) => {
   });
 });
 
-// search Modal
-const searchBtn = document.querySelector(".fa-search");
-const modalSearch = document.querySelector(".modalSearch");
-const closeBtn = document.querySelector(".fa-close");
+// Search Modal
+const searchBtn = document.querySelector(".search-box .fa-magnifying-glass");
+const closeBtn = document.querySelector(".close");
+const modalSearch = document.querySelector(".modal-search");
+
 searchBtn.addEventListener("click", () => {
   modalSearch.classList.add("active");
 });
+
 closeBtn.addEventListener("click", () => {
   modalSearch.classList.remove("active");
 });
