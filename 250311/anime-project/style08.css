@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  height: 100vh;
+}
+
+svg {
+  width: 1024px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+svg.svg2 {
+  -webkit-transform: translate(-49%, -49%);
+          transform: translate(-49%, -49%);
+  fill: rgba(118, 75, 174, 0.7);
+}
+svg.svg1 {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+  -webkit-transform: translate(-48.4%, -48.4%);
+          transform: translate(-48.4%, -48.4%);
+}

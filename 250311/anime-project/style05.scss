@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: brown;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  li {
+    width: calc(100% / 9 - 4px);
+    height: 30px;
+    background: #fff;
+    margin: 0 2px 2px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: cornsilk;
+  }
+}
